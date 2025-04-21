@@ -6,7 +6,7 @@ import {
   getContactById,
   patchContact,
 } from '../services/contacts.js';
-import { parsePaginationParams } from '../utils/ParsePaginationParams.js';
+import { parsePaginationParams } from '../utils/parseFilterParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
 import { parseFilterParams } from '../utils/parseFilterParams.js';
 
