@@ -1,0 +1,38 @@
+description: Bad Request
+content:
+  application/json:
+    schema:
+      type: object
+      required:
+        - status
+        - message
+        - data
+      properties:
+        status:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: 'Bad Request. Invalid parameter.'
+        data:
+          type: object
+          properties:
+            message:
+              type: string
+              example: 'Invalid or missing parameters.'
+            errors:
+              type: array
+              items:
+                type: object
+                required:
+                  - message
+                  - path
+                properties:
+                  message:
+                    type: string
+                    example: 'Username is required'
+                  path:
+                    type: array
+                    items:
+                      type: string
+                    example: ['name']
