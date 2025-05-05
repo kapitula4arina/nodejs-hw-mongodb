@@ -30,9 +30,7 @@
   "paths": {
     "/contacts": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get list of contacts",
         "operationId": "getContacts",
         "description": "Get contacts records. You can use query parameters",
@@ -85,10 +83,7 @@
             "description": "Sort direction ascending or descending.",
             "schema": {
               "type": "string",
-              "enum": [
-                "asc",
-                "desc"
-              ],
+              "enum": ["asc", "desc"],
               "default": "asc",
               "example": "asc"
             }
@@ -108,11 +103,7 @@
             "description": "Filter by contact type.",
             "schema": {
               "type": "string",
-              "enum": [
-                "work",
-                "home",
-                "personal"
-              ],
+              "enum": ["work", "home", "personal"],
               "example": "home"
             }
           }
@@ -124,11 +115,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": [
-                    "status",
-                    "message",
-                    "data"
-                  ],
+                  "required": ["status", "message", "data"],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -193,9 +180,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Create contact",
         "operationId": "createContact",
         "description": "Create a new contact with name, phone number, and optional fields like email, contact type, or photo.",
@@ -209,10 +194,7 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "name",
-                  "phoneNumber"
-                ],
+                "required": ["name", "phoneNumber"],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -238,11 +220,7 @@
                   "contactType": {
                     "type": "string",
                     "description": "Contact type.",
-                    "enum": [
-                      "work",
-                      "home",
-                      "personal"
-                    ],
+                    "enum": ["work", "home", "personal"],
                     "example": "personal"
                   },
                   "photo": {
@@ -262,11 +240,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": [
-                    "status",
-                    "message",
-                    "data"
-                  ],
+                  "required": ["status", "message", "data"],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -295,9 +269,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get contact by id",
         "operationId": "getContactById",
         "description": "Retrieve a single contact using its unique ID.",
@@ -325,11 +297,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": [
-                    "status",
-                    "message",
-                    "data"
-                  ],
+                  "required": ["status", "message", "data"],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -356,10 +324,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Contacts"
-        ],
+      "patch": {
+        "tags": ["Contacts"],
         "summary": "Update contact by ID",
         "operationId": "patchContact",
         "description": "Partially update an existing contact by providing one or more fields.",
@@ -412,11 +378,7 @@
                   "contactType": {
                     "description": "Updated contact type.",
                     "type": "string",
-                    "enum": [
-                      "work",
-                      "home",
-                      "personal"
-                    ],
+                    "enum": ["work", "home", "personal"],
                     "example": "work"
                   },
                   "photo": {
@@ -436,11 +398,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": [
-                    "status",
-                    "message",
-                    "data"
-                  ],
+                  "required": ["status", "message", "data"],
                   "properties": {
                     "status": {
                       "type": "integer",
@@ -470,9 +428,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Delete contact by id",
         "operationId": "deleteContact",
         "description": "Deletes a contact by its unique identifier.",
@@ -517,10 +473,7 @@
     "schemas": {
       "contact": {
         "type": "object",
-        "required": [
-          "name",
-          "phoneNumber"
-        ],
+        "required": ["name", "phoneNumber"],
         "properties": {
           "_id": {
             "description": "Contact id.",
@@ -542,7 +495,7 @@
             "type": "string",
             "example": "john@example.com"
           },
-          "isFavorite": {
+          "isFavourite": {
             "description": "Contact`s favorite status",
             "type": "boolean",
             "example": true
@@ -550,11 +503,7 @@
           "contactType": {
             "description": "Contact type.",
             "type": "string",
-            "enum": [
-              "work",
-              "home",
-              "personal"
-            ]
+            "enum": ["work", "home", "personal"]
           },
           "userId": {
             "description": "Contact user id.",
@@ -576,11 +525,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -601,10 +546,7 @@
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "required": [
-                          "message",
-                          "path"
-                        ],
+                        "required": ["message", "path"],
                         "properties": {
                           "message": {
                             "type": "string",
@@ -615,9 +557,7 @@
                             "items": {
                               "type": "string"
                             },
-                            "example": [
-                              "name"
-                            ]
+                            "example": ["name"]
                           }
                         }
                       }
@@ -635,11 +575,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -651,9 +587,7 @@
                 },
                 "data": {
                   "type": "object",
-                  "required": [
-                    "message"
-                  ],
+                  "required": ["message"],
                   "properties": {
                     "message": {
                       "type": "string",
@@ -672,11 +606,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -688,9 +618,7 @@
                 },
                 "data": {
                   "type": "object",
-                  "required": [
-                    "message"
-                  ],
+                  "required": ["message"],
                   "properties": {
                     "message": {
                       "type": "string",

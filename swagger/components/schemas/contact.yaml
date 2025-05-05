@@ -19,7 +19,7 @@ properties:
     description: Contact email address.
     type: string
     example: 'john@example.com'
-  isFavorite:
+  isFavourite:
     description: 'Contact`s favorite status'
     type: boolean
     example: true
